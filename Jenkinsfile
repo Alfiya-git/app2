@@ -12,7 +12,7 @@ pipeline {
         stage('Deploy Docker Container') {
             steps {
                 script {
-                     sh "docker run -itd -p 80:8083 stacksimplify/kube-nginxapp2:1.0.0"
+                     sh "docker run -itd -p 81:8083 stacksimplify/kube-nginxapp2:1.0.0"
 
                     }
                 }
