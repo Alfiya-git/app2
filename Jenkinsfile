@@ -9,11 +9,10 @@ pipeline {
             }
         }
 
-        stage('Deploy Kube') {
+        stage('Deploy') {
             steps {
                 script {
-                     sh "kubectl create -f 01-Nginx-App2-Deployment-and-NodePortService.yml"
-                     sh " kubectl create -f 02-App2-Ingress.yml"
+                     sh "docker run -itd -p 80:8084 stacksimplify/kube-nginxapp1:1.0.0"
 
                     }
                 }
